@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TagPro Map Stats</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+		}
+		#blocks canvas {
+			margin: 5px;
+			background-color: black;
+		}
+		#loader {
+			width: 64px;
+			margin-bottom: -27px;
+			margin-left: -135px;
+		}
+	</style>
+</head>
+<body>
+	<label>Input Map-image files:</label> <input type="file" id="mapFiles" multiple> <img style="display: none;" id="loader" src="/assets/ring.gif">
+	<br/>
+	<h1>Map Compare: </h1>
+	<select id="mapSelect1"></select>
+	<p style="display: inline"> Vs </p>
+	<select id="mapSelect2"></select>
+	<br/>
+	<button id="compare">Compare</button>
+	<br/>
+	<img style="display: none;" id="loader2" src="/assets/ring.gif">
+	<div id="blocks"></div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

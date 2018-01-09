@@ -1,0 +1,14 @@
+{
+  "name": "tpmapstats",
+  "version": "1.0.0",
+  "description": "thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "author": "Hydrosaur",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
