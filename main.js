@@ -111,7 +111,7 @@ function getBlocks(data, callback){
 			var pixelRow = [];
 			for(var j = 0;j < image.width;j++){
 				var pixelData = ctx.getImageData(j, i, 1, 1).data;
-				if(pixelData[0] === 0){
+				if(pixelData[0] === 0 && pixelData[1] === 0 && pixelData[2] === 0){
 					// Black Tile
 					pixelRow.push(0);
 				} else if(pixelData[0] === 212 && pixelData[1] === 212 && pixelData[2] === 212){
@@ -123,9 +123,6 @@ function getBlocks(data, callback){
 				} else if(pixelData[0] === 187 && pixelData[1] === 184 && pixelData[2] === 221){
 					// Blue Tile
 					pixelRow.push(1.2);
-				} else if(pixelData[0] === 0 && pixelData[1] === 255 && pixelData[2] === 0){
-					// Power-Up
-					pixelRow.push(6);
 				} else if(pixelData[0] === 120 && pixelData[1] === 120 && pixelData[2] === 120){
 					// Wall
 					pixelRow.push(2);
@@ -156,6 +153,9 @@ function getBlocks(data, callback){
 				} else if(pixelData[0] === 55 && pixelData[1] === 55 && pixelData[2] === 55){
 					// Spike
 					pixelRow.push(5);
+				} else if(pixelData[0] === 0 && pixelData[1] === 255 && pixelData[2] === 0){
+					// Power-Up
+					pixelRow.push(6);
 				} else if(pixelData[0] === 0 && pixelData[1] === 117 && pixelData[2] === 0){
 					// Gate
 					pixelRow.push(7);
@@ -205,16 +205,16 @@ function getTileImage(tileNum){
 		return "/tiles/wall.png";
 	} else if(tileNum === 2.1){
 		// Wall TL
-		return "/tiles/wall.png";
+		return "/tiles/wallTL.png";
 	} else if(tileNum === 2.2){
 		// Wall TR
-		return "/tiles/wall.png";
+		return "/tiles/wallTR.png";
 	} else if(tileNum === 2.3){
 		// Wall BL
-		return "/tiles/wall.png";
+		return "/tiles/wallBL.png";
 	} else if(tileNum === 2.4){
 		// Wall BR
-		return "/tiles/wall.png";
+		return "/tiles/wallBR.png";
 	} else if(tileNum === 3){
 		// Bomb
 		return "/tiles/bomb.png";
